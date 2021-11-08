@@ -1,0 +1,5 @@
+# Validator
+
+Validator负责验证SQL中用到的列是否存在，以及数据类型是否正确。因为它是和具体数据相关的，而Apache Calcite中不负责数据处理，也不保存任何数据，所以我们需要自定义适配器来适配这部分。
+
+model.json中定义了schemas名称，类型，使用哪个SchemaFactory来进行处理，以及各个表的ddl和data文件的位置。我们实现SchemaFactory,然后在查询时指定正确的model.json文件就可以了。

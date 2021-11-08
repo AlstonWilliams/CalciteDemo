@@ -1,0 +1,5 @@
+# Parser模块作用
+
+FMPP会先将Parser模板渲染出来，其中包括Parser的java代码，以及SQL语法规则。渲染出来以后，JavaCC负责生成具体的Java代码，比如如何分词等。
+
+Parser模块只会将一条SQL解析成对应的语法树。它会校验语法符不符合规范，但不会检查SQL中用到的列在表中是否存在。后者是Validator去做的事情。

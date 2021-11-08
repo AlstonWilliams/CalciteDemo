@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "defaultSchema": "tutorial",
+  "schemas": [ {
+    "name": "tutorial",
+    "type": "custom",
+    "factory": "com.demo.DemoSchemaFactory",
+    "operand": {
+      "tables": [
+        {
+          "ddl": "/Users/pangshuyue/projects/CalciteDemo/data/user/user.json",
+          "data": "/Users/pangshuyue/projects/CalciteDemo/data/user/user.txt"
+        },{
+          "ddl": "/Users/pangshuyue/projects/CalciteDemo/data/role/role.json",
+          "data": "/Users/pangshuyue/projects/CalciteDemo/data/role/role.txt"
+        }
+      ]
+    }
+  } ]
+}
