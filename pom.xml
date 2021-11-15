@@ -64,6 +64,8 @@
     <module>CalciteParser</module>
     <module>CalciteParserClient</module>
       <module>CalciteValidator</module>
+      <module>CalciteOptimizer</module>
+      <module>CalciteConverter</module>
   </modules>
 
   <name>CalciteDemo</name>
