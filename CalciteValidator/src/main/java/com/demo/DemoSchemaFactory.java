@@ -30,6 +30,7 @@ public class DemoSchemaFactory implements SchemaFactory {
             for (Object table : tables) {
                 String ddl = (String) ((HashMap)table).get("ddl");
                 DemoTable demoTable = JSON_MAPPER.readValue(new File(ddl), DemoTable.class);
+                demoTable.setDataFile((String) ((HashMap)table).get("data"));
                 tableList.add(demoTable);
             }
 

@@ -4,6 +4,8 @@ import org.apache.calcite.config.CalciteConnectionConfigImpl;
 import org.apache.calcite.config.Lex;
 import org.apache.calcite.jdbc.CalcitePrepare;
 import org.apache.calcite.prepare.CalciteCatalogReader;
+import org.apache.calcite.rel.RelNode;
+import org.apache.calcite.rel.RelRoot;
 import org.apache.calcite.rel.type.RelDataTypeSystem;
 import org.apache.calcite.server.CalciteServerStatement;
 import org.apache.calcite.sql.SqlNode;
@@ -13,17 +15,16 @@ import org.apache.calcite.sql.parser.SqlParseException;
 import org.apache.calcite.sql.parser.SqlParser;
 import org.apache.calcite.sql.type.SqlTypeFactoryImpl;
 import org.apache.calcite.sql.validate.*;
+import org.apache.calcite.tools.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 public class App
 {
-    public static void main( String[] args ) throws SQLException, SqlParseException {
+    public static void main( String[] args ) throws SQLException, SqlParseException, RelConversionException {
         Properties info = new Properties();
         info.put("lex", "mysql");
         String model = "/Users/pangshuyue/projects/CalciteDemo/data/model.json";
@@ -63,5 +64,13 @@ public class App
         System.out.println(namespace);
         System.out.println(namespace.fieldExists("nameCC"));
 
+
+
+
+//        Statement statement1 = connection.createStatement();
+//        ResultSet resultSet = statement1.executeQuery("select name from tutorial.user_info where id = 1 order by id");
+//        while (resultSet.next()) {
+//            System.out.println(resultSet.getString("name"));
+//        }
     }
 }
